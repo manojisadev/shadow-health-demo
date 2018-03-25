@@ -32,7 +32,7 @@ class TriviaQuestionsController < ApplicationController
 
     respond_to do |format|
       if @trivia_question.save
-        format.html {redirect_to @trivia_question, notice: 'Trivia question was successfully created.'}
+        format.html {redirect_to new_trivia_question_path, notice: 'Trivia question was successfully created. Add another one!'}
         format.json {render :show, status: :created, location: @trivia_question}
       else
         format.html {render :new}
@@ -67,12 +67,6 @@ class TriviaQuestionsController < ApplicationController
 
   def play
     @trivia_question = TriviaQuestion.order("RANDOM()").first
-  end
-
-  def answer
-    @user_answer = Answer.find(params[:answer_id])
-    #TODO switch update_attributes with incremnt and decrement
-    @user_answer.correct ? current_user.update_attributes({score: current_user.score + 4}) : current_user.update_attributes({score: current_user.score - 1})
   end
 
   private

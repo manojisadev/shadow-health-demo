@@ -8,7 +8,7 @@
     </div>
 
     <div class="list-group" id="item-button">
-      <%= form_tag(answer_path) do |form|%>
+      <%= form_tag(check_trivia_question_answers_path(@trivia_question), method: :post) do |form|%>
         <% @trivia_question.answers.each do |f| %>
           <%= button_tag f.answer_text, class: 'list-group-item', name: 'answer_id', value: f.id.to_s %>
         <% end %>

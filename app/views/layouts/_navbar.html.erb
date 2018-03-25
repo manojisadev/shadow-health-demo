@@ -14,9 +14,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'Play', play_path %></li>
+        <li><%= link_to 'Play', play_trivia_questions_path %></li>
         <li><%= link_to 'New Question', new_trivia_question_path %></li>
-        <li><a href="#">Stats</a></li>
+        <li><%= link_to 'Ranking', ranking_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
