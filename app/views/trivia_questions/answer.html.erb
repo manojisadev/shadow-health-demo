@@ -1,1 +1,27 @@
-Hello
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <% if @user_answer.correct %>
+        <div class="panel panel-success">
+    <% else %>
+        <div class="panel panel-danger">
+    <% end %>
+          <div class="panel-heading">
+          Question : <%= @user_answer.trivia_question.question%>
+          </div>
+          <div class="list-group">
+            <li class="list-group-item">Your Answer: <%= @user_answer.answer_text %></li>
+            <li class="list-group-item">Answer : <%= @user_answer.retrieve_answer.answer_text %></li>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <div class="well well-lg">
+      <center>
+      <h2>Current Score: <%= current_user.score %></h2>
+      </center>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Email</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each.with_index(1) do |f, index| %>
+      <tr>
+        <td><%= index %></td>
+        <td><%= f.email %></td>
+        <td><%= f.score %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

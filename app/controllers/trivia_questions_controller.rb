@@ -71,7 +71,8 @@ class TriviaQuestionsController < ApplicationController
 
   def answer
     @user_answer = Answer.find(params[:answer_id])
-    # @user_answer.correct
+    #TODO switch update_attributes with incremnt and decrement
+    @user_answer.correct ? current_user.update_attributes({score: current_user.score + 4}) : current_user.update_attributes({score: current_user.score - 1})
   end
 
   private

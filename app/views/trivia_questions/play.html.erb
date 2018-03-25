@@ -7,7 +7,7 @@
       <%= content_tag :div, @trivia_question.question, class: 'panel-body' %>
     </div>
 
-    <div class="list-group">
+    <div class="list-group" id="item-button">
       <%= form_tag(answer_path) do |form|%>
         <% @trivia_question.answers.each do |f| %>
           <%= button_tag f.answer_text, class: 'list-group-item', name: 'answer_id', value: f.id.to_s %>
