@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Trivia Questions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trivia_questions.each do |trivia_question| %>
+      <tr>
+        <td><%= trivia_question.question %></td>
+        <td><%= link_to 'Show', trivia_question %></td>
+        <td><%= link_to 'Edit', edit_trivia_question_path(trivia_question) %></td>
+        <td><%= link_to 'Destroy', trivia_question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trivia Question', new_trivia_question_path %>

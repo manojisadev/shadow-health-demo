@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-2">
+    <%= simple_form_for(@trivia_question) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+          <%= f.input :question %>
+        </div>
+
+        <div class="fields">
+          <%= f.simple_fields_for :answers do |builder| %>
+            <%= render 'answer_form', f: builder %>
+          <% end %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit %>
+        </div>
+    <% end %>
+  </div>
+</div>

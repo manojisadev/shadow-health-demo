@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @trivia_question.question %>
+</p>
+
+<% @answers.each do |f| %>
+  <strong>Answers:</strong>
+  <%= f.answer_text %>
+  <%= f.correct %>
+  <br>
+<% end %>
+
+<%= link_to 'Edit', edit_trivia_question_path(@trivia_question) %> |
+<%= link_to 'Back', trivia_questions_path %>
