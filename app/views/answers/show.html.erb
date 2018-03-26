@@ -21,7 +21,21 @@
     <div class="well well-lg">
       <center>
       <h2>Current Score: <%= current_user.score %></h2>
+        <h4>Highest Streak: <%= current_user.streak %></h4>
+        <h5>Current Streak: <%= session[:streak_count] %></h5>
       </center>
     </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <center>
+      <div class="btn-group">
+        <%= link_to "NEXT QUESTION", play_trivia_questions_path, class: 'btn btn-primary' %>
+        <%= link_to "FINISH SESSION", trivia_question_answers_path, class: 'btn btn-danger', method: :delete %>
+        <!--Update link-->
+      </div>
+    </center>
   </div>
 </div>

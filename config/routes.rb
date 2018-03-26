@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :trivia_questions do
     resources :answers, only: [:show] do
       post :check, on: :collection
+      delete :destroy, on: :collection
     end
     get :play, on: :collection
   end

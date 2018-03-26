@@ -6,6 +6,7 @@
           <th>#</th>
           <th>Email</th>
           <th>Score</th>
+          <th>Highest Streak</th>
         </tr>
       </thead>
       <tbody>
@@ -14,6 +15,7 @@
             <td><%= @users.offset + index %></td>
             <td><%= f.email %></td>
             <td><%= f.score %></td>
+            <td><%= f.streak %></td>
           </tr>
         <% end %>
       </tbody>

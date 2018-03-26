@@ -1,5 +1,7 @@
 class TriviaQuestionsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_trivia_question, only: [:show, :edit, :update, :destroy]
+
 
   # GET /trivia_questions
   # GET /trivia_questions.json
@@ -29,7 +31,7 @@ class TriviaQuestionsController < ApplicationController
   # POST /trivia_questions.json
   def create
     @trivia_question = TriviaQuestion.new(trivia_question_params)
-
+    @trivia_question.user_id = current_user.id if current_user
     respond_to do |format|
       if @trivia_question.save
         format.html {redirect_to new_trivia_question_path, notice: 'Trivia question was successfully created. Add another one!'}
@@ -66,7 +68,7 @@ class TriviaQuestionsController < ApplicationController
   end
 
   def play
-    @trivia_question = TriviaQuestion.order("RANDOM()").first
+    @trivia_question = TriviaQuestion.where.not(user_id: current_user.id).order("RANDOM()").first
   end
 
   private

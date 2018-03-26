@@ -1,9 +1,10 @@
 <div class="row">
   <div class="col-sm-6 col-sm-offset-3">
-    <div class="panel panel-default">
+    <div class="panel panel-primary">
       <div class="panel-heading">
         Question
       </div>
+      <% if @trivia_question %>
       <%= content_tag :div, @trivia_question.question, class: 'panel-body' %>
     </div>
 
@@ -14,5 +15,8 @@
         <% end %>
       <% end %>
     </div>
+      <% else %>
+        <%= content_tag :div, 'Empty please wait for someone else to add a question!', class: 'panel-body' %>
+    <% end %>
   </div>
 </div>
