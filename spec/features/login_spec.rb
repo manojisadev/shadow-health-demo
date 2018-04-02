@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'User Login' do
-  let!(:user) {FactoryBot.create(:user)}
+  let(:user) { FactoryBot.create(:user) }
 
   scenario 'Allow user to login if credentials are correct' do
     visit new_user_session_path
@@ -12,7 +12,6 @@ feature 'User Login' do
 
     expect(page.current_path).to eq(root_path)
     expect(page).to have_content('Signed in successfully.')
-
   end
 
   scenario 'Deny acces if credentials are incorrect' do

@@ -43,6 +43,7 @@ group :development, :test do
   gem 'pry-nav'
   gem 'pry-stack_explorer'
   gem 'capybara-webkit'
+  gem 'rack_session_access'
 end
 
 group :development do
