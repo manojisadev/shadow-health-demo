@@ -6,7 +6,7 @@ class TriviaQuestionsController < ApplicationController
   # GET /trivia_questions
   # GET /trivia_questions.json
   def index
-    @trivia_questions = TriviaQuestion.all
+    @trivia_questions = TriviaQuestion.where(user_id: current_user.id)
   end
 
   # GET /trivia_questions/1

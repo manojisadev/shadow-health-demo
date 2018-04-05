@@ -1,1 +1,35 @@
-Hello!
+<div class="col-sm-2 col-sm-offset-3">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Play</h3>
+    </div>
+    <div class="panel-body">
+      <p>Ready to test your wits!</p>
+      <%= link_to 'Play', play_trivia_questions_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-2">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Add A Question</h3>
+    </div>
+    <div class="panel-body">
+      <p>Got a challenging question to ask?</p>
+      <%= link_to 'New Question', new_trivia_question_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-2">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">View Ranking</h3>
+    </div>
+    <div class="panel-body">
+      <p>Curious where you stand?</p>
+      <%= link_to 'Ranking', ranking_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
